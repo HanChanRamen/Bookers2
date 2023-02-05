@@ -1,0 +1,36 @@
+<div>
+  <%= render 'users/userinfo', user: @user %>
+  <%= render 'books/new', book: @book %>
+</div>
+
+<div class="col-md-8 offset-md-1">
+    <h2>Users</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <td>image</td>
+          <td>name</td>
+          <td colspan="3"></td>
+        </tr>
+      </thead>
+
+      <tboday>
+        <% @users.each do |user| %>
+          <tr>
+           <td>
+              <%= link_to users_path(user) do %>
+              <%= image_tag user.get_profile_image %>
+              <% end %>
+              <td>
+              <%= user.name %>
+              </td>
+              <td>
+                <%= link_to "Show",user_path(user.id) %>
+              </td>
+            </td>
+          </tr>
+        <% end %>
+
+      </tboday>
+    </table>
+  </div>
